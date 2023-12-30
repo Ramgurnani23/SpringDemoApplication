@@ -14,6 +14,11 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepo employeeRepo;
 	
+	// This constructor is used for JUnit/Mockito Testing purpose
+	public EmployeeService(EmployeeRepo empRepo) {
+		this.employeeRepo = empRepo;
+	}
+
 	public List<Employee> getAllEmployees() {
         return employeeRepo.findAll();
     }
